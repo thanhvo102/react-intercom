@@ -1,7 +1,7 @@
 {
-  "name": "react-intercom",
+  "name": "@thanhvo102/react-intercom",
   "version": "1.0.15",
-  "description": "A component to initialize Intercom in your application",
+  "description": "A component to initialize Intercom in Remitano",
   "main": "lib/index.js",
   "dependencies": {
     "prop-types": "15.5.8"
@@ -15,16 +15,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/",
-    "prepublishOnly": "npm run compile"
+    "prepare": "yarn compile"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhagen/react-intercom.git"
+    "url": "git+https://github.com/thanhvo102/react-intercom.git"
   },
-  "author": "Nathan Hagen",
+  "author": "Nathan Hagen, Thanh Vo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nhagen/react-intercom/issues"
+    "url": "https://github.com/thanhvo102/react-intercom/issues"
   },
-  "homepage": "https://github.com/nhagen/react-intercom#readme"
+  "homepage": "https://github.com/thanhvo102/react-intercom#readme"
 }
