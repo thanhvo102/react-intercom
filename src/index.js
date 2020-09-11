@@ -16,6 +16,7 @@ export const IntercomAPI = (...args) => {
 export default class Intercom extends Component {
   static propTypes = {
     appID: PropTypes.string.isRequired,
+    apiBase: PropTypes.string,
   };
 
   static displayName = 'Intercom';
@@ -25,6 +26,7 @@ export default class Intercom extends Component {
 
     const {
       appID,
+      apiBase,
       ...otherProps,
     } = props;
 
@@ -49,7 +51,7 @@ export default class Intercom extends Component {
       })(window, document, appID);
     }
 
-    window.intercomSettings = { ...otherProps, app_id: appID };
+    window.intercomSettings = { ...otherProps, app_id: appID, api_base: apiBase };
 
     if (window.Intercom) {
       window.Intercom('boot', otherProps);
@@ -59,12 +61,13 @@ export default class Intercom extends Component {
   componentWillReceiveProps(nextProps) {
     const {
       appID,
+      apiBase,
       ...otherProps,
     } = nextProps;
 
     if (!canUseDOM) return;
 
-    window.intercomSettings = { ...otherProps, app_id: appID };
+    window.intercomSettings = { ...otherProps, app_id: appID, api_base: apiBase };
 
     if (window.Intercom) {
       if (this.loggedIn(this.props) && !this.loggedIn(nextProps)) {
